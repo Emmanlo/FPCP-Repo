@@ -1,0 +1,493 @@
+/* ✅ Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ✅ Full Page Layout */
+html, body {
+    height: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ✅ Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #1a1a1a, #2c3e50);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Navbar Logo */
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ✅ Desktop Navigation Links (Aligned to the top right) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.nav-links li {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Optional: Improve horizontal scroll for long tables */
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 4px;
+  }
+
+/* ✅ Scrollable Table */
+.table-wrapper {
+    max-height: calc(90vh - 120px); /* Ensures it doesn’t overlap navbar/footer */
+    width: 100%;
+    max-width: 90vw;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    white-space: nowrap;
+    margin-top: 100px; /* Prevents navbar overlap */
+    margin-bottom: 10px; /* Prevents footer overlap */
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Move table higher */
+    width: 100%;
+    padding: 16px;
+    overflow-x: auto;
+    position: relative;
+    margin-bottom: 80px; /* Ensures space above the footer */
+}
+
+/* ✅ Table Styling */
+table {
+    width: max-content;
+    min-width: 800px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff; /* White background for modern look */
+    color: #333; /* Dark text for contrast */
+    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* ✅ Reduce Cell Width in Header and Content */
+th, td {
+    padding: 2px; /* Smaller padding for compact layout */
+    border: -5px solid #555;
+    border-bottom: 0px solid #444;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle; /* Center text vertically */
+    height: 35px; /* Slightly smaller height */
+    min-width: 50px; /* Reduced width from 50px */
+    max-width: 50px; /* Prevents excessive stretching */
+    background-color: #343a40;
+    color: white;
+    text-overflow: ellipsis; /* Truncate long text */
+    position: relative;
+    resize: none;
+    user-select: none;
+    
+}
+
+/* ✅ Hover Effect on Rows */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.sticky-columns {
+  position: sticky;
+  z-index: 90;
+  top: 0;
+  background: #1a1a1a;
+}
+
+/* Fix the first three columns */
+th:nth-child(1) { /* LIFEGROUP LEADER */
+    position: sticky;
+    left: 0;
+    z-index: 100; /* Higher than other columns */
+    background: #1a1a1a;
+    width: 150px;
+    min-width: 180px;
+    max-width: 180px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Prevents visual overlap */
+}
+
+td:nth-child(1) {
+    position: sticky;
+    z-index: 99;
+    left: 0;
+}
+
+th:nth-child(2) { /* MEMBER */
+    position: sticky;
+    left: 150px; /* Starts exactly after the first column */
+    z-index: 100;
+    background: #1a1a1a;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+td:nth-child(2) {
+    position: sticky;
+    z-index: 99;
+    left: 150px;
+}
+
+th:nth-child(3) { /* AGE GROUP */
+    position: sticky;
+    left: 300px; /* Starts exactly after the second column */
+    z-index: 100;
+    background: #1a1a1a;
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-right: 2px solid gray; /* ✅ White right border */
+}
+
+td:nth-child(3) {
+    position: sticky;
+    z-index: 99;
+    left: 300px;
+    border-right: 2px solid gray; /* ✅ White right border */
+}
+
+th:nth-child(4) { 
+    position: sticky;
+    max-width: 100px;
+    min-width: 100px;;
+    z-index: 98;
+
+}
+
+td:nth-child(4) {
+    max-width: 50px;
+}
+
+th:nth-child(5) { 
+    position: sticky;
+    z-index: 97;
+    
+}
+
+th:nth-child(6) { 
+    position: sticky;
+    z-index: 96;
+    
+}
+
+th:nth-child(7) { 
+    position: sticky;
+    z-index: 97;
+    
+}
+
+th:nth-child(8) { 
+    position: sticky;
+    z-index: 96;
+    
+}
+
+th:nth-child(9) { 
+    position: sticky;
+    z-index: 95;
+    
+}
+
+th:nth-child(10) { 
+    position: sticky;
+    z-index: 94;
+}
+
+th:nth-child(11) { 
+    position: sticky;
+    z-index: 93;
+}
+  
+/* ✅ Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    z-index: 101;
+}
+
+/* ✅ Dropdown Button */
+.dropdown-toggle {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.dropdown-toggle:hover {
+    background: #333;
+}
+
+/* ✅ Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    width: 150px;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+/* ✅ Show Dropdown when Open */
+.dropdown-menu.open {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ✅ Dropdown Items */
+.dropdown-item {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: #f1f1f1;
+}
+
+/* Prevent resizing for all fixed columns */
+td {
+    padding-bottom: 7px;
+    text-align: center;
+    height: 40px;
+    min-width: 120px;
+    background-color: #ffffff; /* Cells are now white */
+}
+
+/* ✅ Ensure all headers remain visible when scrolling down */
+thead th {
+    position: sticky;
+    top: 0;
+    background: #1a1a1a;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* ✅ Hover Effect */
+tbody tr:hover {
+    background-color: #f5f5f5; /* Light gray hover effect */
+}
+
+/* ✅ Alternating Row Colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* ✅ Rounded Bottom Borders */
+tbody tr:last-child td {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+
+/* ✅ Alternating Row Colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* ✅ Editable Fields */
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* ✅ Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #1a1a1a, #2c3e50);
+    color: #e0e0e0;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #555;
+    z-index: 1000;
+}
+
+
+/* Mobile View */
+/* ✅ Hide mobile menu by default */
+.mobile-menu {
+     position: fixed;
+    top: 60px; /* Below the navbar */
+    right: 15px;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.9); /* Dark translucent background */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ Hide mobile toggle button on larger screens */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ✅ Show mobile menu only when toggled */
+.mobile-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    
+}
+
+/* ✅ Mobile Menu Links */
+.mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    text-align: center;
+    display: block;
+}
+
+.mobile-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Mobile Adjustments */
+@media (max-width: 768px) {
+    /* ✅ Hide Desktop Navigation Links */
+    .nav-links {
+        display: none;
+    }
+
+    /* ✅ Show Menu Toggle Button */
+    .menu-toggle {
+        display: block;
+    }
+
+    .table-container {
+        overflow-x: auto; /* Ensures horizontal scroll remains */
+        width: 100%;
+    }
+    
+    .table-wrapper {
+        max-width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        display: block;
+        white-space: nowrap;
+        padding-bottom: 10px; /* Extra space for scroll visibility */
+    }
+
+    table {
+        min-width: 400px; /* Reduce width but keep it scrollable */
+        width: max-content; /* Prevent table from squeezing too much */
+        border-collapse: collapse;
+        margin-left: 500px;
+    }
+
+    /* ✅ Reduce Column Widths for Mobile */
+    th, td {
+        min-width: 80px; /* Decrease minimum width */
+        max-width: 100px;
+        font-size: 12px; /* Reduce text size */
+        padding: 4px; /* Reduce padding */
+    }
+
+    /* ✅ Adjust Fixed Column Positions for Smaller Screens */
+    th:nth-child(1), td:nth-child(1) { left: 0px; width: 120px; }
+    th:nth-child(2), td:nth-child(2) { left: 120px; width: 120px; }
+    th:nth-child(3), td:nth-child(3) { left: 240px; width: 100px; }
+}

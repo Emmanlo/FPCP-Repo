@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# build output
+/dist
+/build
+
+# environment variables
+.env
+
+# misc
+.DS_Store
+*.log
+*.lock
+.vscode
